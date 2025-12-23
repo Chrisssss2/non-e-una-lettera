@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Non è una lettera</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: env(safe-area-inset-top) 20px env(safe-area-inset-bottom);
+    background-color: #0f0f0f;
+    color: #f2f2f2;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
+#box {
+    width: 100%;
+    max-width: 420px;   /* perfetto per iPhone verticale */
+    font-size: 19px;    /* leggermente più grande */
+    line-height: 1.75;  /* più aria, più emozione */
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div id="box"></div>
+
+<script>
+const lines = [
+    "Non è una lettera.",
+    "",
+    "È solo un mio modo diverso di dire le cose.",
+    "",
+	"Ancora un altro Natale assieme...",
+	"(menomale ahahah)",
+	"",
+	"Con i nostri momenti belli.",
+	"E quelli un po’ brutti.",
+	"",
+	"Ma sempre insieme.",
+    "",
+    "A volte non è semplice capirci subito.",
+    "A volte ci rispondiamo male.",
+    "A volte siamo solo stanchi.",
+    "",
+    "Ma c’è una cosa che per me resta sempre uguale.",
+    "",
+    "Stare con te è la cosa più bella.",
+    "È una scelta che faccio senza pensarci troppo.",
+    "Fai parte di me, delle mie giornate.",
+    "",
+    "Mi piace essere un NOI.",
+    "",
+    "Mi piace pensare che possiamo stare meglio insieme.",
+    "Capirci di più.",
+    "Parlarci meglio.",
+    "",
+    "Senza perderci nelle cose piccole.",
+    "Senza dimenticarci perché ci scegliamo.",
+    "",
+    "TI AMO",
+    "Ogni giorno un po’ di più.",
+    "",
+    "Buon Natale amore mio."
+];
+
+let index = 0;
+const box = document.getElementById("box");
+
+function showNextLine() {
+    if (index < lines.length) {
+        box.innerHTML += lines[index] + "<br>";
+        index++;
+        setTimeout(showNextLine, 900);
+    }
+}
+
+showNextLine();
+</script>
+
+</body>
+</html>
